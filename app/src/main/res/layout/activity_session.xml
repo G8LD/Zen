@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#202A44">
+
+    <TextView
+        android:id="@+id/title_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Session"
+        android:textSize="32sp"
+        android:textColor="@color/text_color"
+        android:gravity="center"
+        android:padding="16dp" />
+
+    <Button
+        android:id="@+id/meditation_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Meditation"
+        android:layout_below="@id/title_textview"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/text_color"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:background="@drawable/meditation_button"/>
+
+    <Button
+        android:id="@+id/respiration_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Respiration"
+        android:layout_below="@id/meditation_button"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/text_color"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:background="@drawable/respiration_button"/>
+
+    <RelativeLayout
+        android:id="@+id/number_picker_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/respiration_button"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_centerInParent="true">
+
+        <TextView
+            android:id="@+id/number_picker_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Durée (min): "
+            android:textColor="@color/text_color"
+            android:textSize="18sp"
+            android:layout_centerVertical="true"/>
+
+        <NumberPicker
+            android:id="@+id/number_picker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/number_picker_textview"
+            android:layout_centerVertical="true"
+            android:theme="@style/AppTheme.Picker"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>

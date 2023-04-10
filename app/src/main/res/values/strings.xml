@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Zen</string>
+    <string name="start_button_text">Commencer</string>
+    <string name="user_name_hint">Votre Prenom</string>
+</resources>

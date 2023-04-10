@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="50dp"
+        android:src="@drawable/ic_launcher_foreground" />
+
+
+    <Button
+        android:id="@+id/camera_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Prendre une photo"
+        android:textColor="@color/text_color"
+        android:textSize="20sp"
+        android:background="@drawable/button"/>
+
+    <EditText
+        android:id="@+id/user_name_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/camera_button"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:hint="@string/user_name_hint"
+        android:imeOptions="actionDone"
+        android:inputType="textPersonName"
+        android:maxLines="1"
+        android:textColor="@color/text_color"
+        android:textColorHint="@color/text_color"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/phone_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/user_name_edittext"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:hint="Votre numéro de téléphone"
+        android:imeOptions="actionDone"
+        android:inputType="phone"
+        android:maxLines="1"
+        android:textColor="@color/text_color"
+        android:textColorHint="@color/text_color"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/save_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/phone_edittext"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Sauvegarder"
+        android:textColor="@color/text_color"
+        android:textSize="20sp"
+        android:background="@drawable/button"/>
+</RelativeLayout>
