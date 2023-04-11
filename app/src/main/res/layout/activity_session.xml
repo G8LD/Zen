@@ -8,7 +8,7 @@
         android:id="@+id/title_textview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Session"
+        android:text="Séance"
         android:textSize="32sp"
         android:textColor="@color/text_color"
         android:gravity="center"

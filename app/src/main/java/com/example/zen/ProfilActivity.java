@@ -85,12 +85,12 @@ public class ProfilActivity extends AppCompatActivity {
             }
         }
 
-        String userName = readData(userNameFileName);
+        String userName = readData(userNameFileName).trim();
         if (userName != null) {
             mUserNameEditText.setText(userName);
         }
 
-        String phone = readData(phoneFileName);
+        String phone = readData(phoneFileName).trim();
         if (phone != null) {
             mPhoneEditText.setText(phone);
         }
@@ -177,14 +177,25 @@ public class ProfilActivity extends AppCompatActivity {
         if (imagePath != null)
             saveData(pfpFileName, imagePath);
 
-        if (mUserNameEditText.getText().toString() != null)
+        if (mUserNameEditText.getText().toString().trim() != null)
             saveData(userNameFileName, mUserNameEditText.getText().toString());
+        if (mPhoneEditText.getText().toString().trim() != null) {
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS)
+                    != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.SEND_SMS},
+                        MY_PERMISSIONS_REQUEST_SEND_SMS);
+            } else {
+                saveData(phoneFileName, mPhoneEditText.getText().toString());
+                SmsManager smsManager = SmsManager.getDefault();
+                String message = "Ce numéro a été enregistré sur Zen";
+                try {
+                    smsManager.sendTextMessage(mPhoneEditText.getText().toString().trim(), null, message, null, null);
+                } catch(Exception e) {
 
-        if (mPhoneEditText.getText().toString() != null) {
-            saveData(phoneFileName, mPhoneEditText.getText().toString());
-            SmsManager smsManager = SmsManager.getDefault();
-            String message = "Ce numéro a été enregistré sur Zen";
-            smsManager.sendTextMessage(mPhoneEditText.getText().toString().trim(), null, message, null, null);
+                }
+
+            }
         }
         Toast.makeText(this, "Sauvegarde confirmée", Toast.LENGTH_SHORT).show();
     }
